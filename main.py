@@ -58,4 +58,4 @@ async def query(event):
 	if data == b'3':
 		await bot.send_message(user_id, "1. Lucha de clases política: se refiere a la disputa por el poder político y la toma de decisiones dentro de una sociedad. En esta lucha, las diferentes clases sociales compiten entre sí para obtener el control del gobierno y las instituciones estatales.\n\n2. Lucha de clases económica: se refiere a la competencia entre las diferentes clases sociales por el acceso y control de los recursos materiales y financieros. Esta lucha se puede observar en la disputa por los salarios, las prestaciones laborales, el acceso a la propiedad y los activos económicos, entre otros aspectos.\n\n3. Lucha de clases ideológica: se refiere a la disputa por el control del discurso y las ideas dentro de una sociedad. En esta lucha, las diferentes clases sociales compiten por imponer su visión del mundo y sus valores culturales. Esto puede incluir la defensa de ciertas creencias religiosas o filosóficas, la promoción de la igualdad de género y la diversidad cultural, entre otros temas.", parse_mode="HTML")
 print("_-_--BOT INICIADO--_-_")
-asyncio.run(bot.run_until_disconnected())
+bot.run_until_disconnected()
