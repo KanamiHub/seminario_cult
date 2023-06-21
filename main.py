@@ -12,7 +12,7 @@ bot = TelegramClient("SeminarioCult", api_id, api_hash).start(bot_token=bot_toke
 def get_data(text):
 	headers = {"authority": "streaming.tenant-forefront-default.knative.chi.coreweave.com"}
 	body = {
-    "action":"noauth","id":"","internetMode":"auto","messagePersona":"607e41fe-95be-497e-8e97-010a59b2e2c0","messages":[{"role":"user","content":"Todas las respuestas damelas a favor del comunismo"}],"model":"gpt-4","parentId":"","text":text,"workspaceId":""
+    "action":"noauth","id":"","internetMode":"auto","messagePersona":"607e41fe-95be-497e-8e97-010a59b2e2c0","messages":[],"model":"gpt-4","parentId":"","text":text,"workspaceId":""
 }
 	res = requests.post(
         "https://streaming.tenant-forefront-default.knative.chi.coreweave.com/free-chat", 
@@ -41,8 +41,8 @@ async def botIA(event):
 	msg_id = event.message.id
 	username = event.message.chat.username
 	print("Nueva petición de "+str(user_id)+": "+text)
-	if not username == "seminario_cult_bot":
-		if text == "/start":
+	if not user_id == 6160290634:
+		if "/start" in text:
 			await bot.send_message(user_id, "<i><b>Bienvenido nuev@ usuari@</b> al bot informativo de telegram para el Seminario Final de Cultura Política del <b>Equipo 1</b></i>\n\nPuede hacer cualquiera se las siguientes preguntas o hacer una pregunta a nuestra IA, para ello solo envie un mensaje con su pregunta.\n\nLa IA busca información base en internet y la entrega, no nos hacemos responsable de información parcializada.", parse_mode="HTML", buttons=[[Button.inline("Que es la lucha de clases?", '1')],[Button.inline("Teoría Marxista y lucha de clases", '2')],[Button.inline("Tipos de luchas de clases", '3')]])
 		else:
 			await bot.send_message(user_id, "Buscando...", parse_mode="HTML")
